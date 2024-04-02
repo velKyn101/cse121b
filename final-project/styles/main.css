@@ -117,3 +117,19 @@ h1 {
 .dark-mode .photo-container img {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #location-input {
+        margin-bottom: 10px;
+    }
+}
