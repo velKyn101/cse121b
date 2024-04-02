@@ -1,58 +1,119 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.toggle-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.toggle-label {
     color: #333;
 }
 
 .search-container {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: calc(100% - 80px);
+#location-input {
+    flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
-button:hover {
-    background-color: #0056b3;
+#search-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #45a049;
 }
 
 .weather-info {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.weather-info p {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
+.photo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-container img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .toggle-container .toggle-label {
+    color: #fff;
+}
+
+.dark-mode #location-input {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode #search-btn {
+    background-color: #4CAF50;
+}
+
+.dark-mode #search-btn:hover {
+    background-color: #45a049;
+}
+
+.dark-mode .photo-container img {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
