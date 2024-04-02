@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const baseURL = 'http://api.weatherapi.com/v1';
             const apiMethod = `/current.json?key=${weatherApiKey}&q=${location}`;
-            const response = await fetch(baseURL + apiMethod);
+            const response = await fetch(`${baseURL}${apiMethod}`);
             if (!response.ok) {
-                throw new Error('Failed to fetch weather data');
+                throw new Error(`Failed to fetch weather data: ${response.status} ${response.statusText}`);
             }
             return response.json();
         } catch (error) {
-            console.error('Error fetching weather data:', error);
+            console.error(`Error fetching weather data: ${error}`);
             return null;
         }
     };
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             if (!response.ok) {
-                throw new Error('Failed to fetch photos from Pexels API');
+                throw new Error(`Failed to fetch photos from Pexels API: ${response.status} ${response.statusText}`);
             }
             const data = await response.json();
             return data.photos.map(photo => photo.src.large);
         } catch (error) {
-            console.error('Error fetching photos from Pexels API:', error);
+            console.error(`Error fetching photos from Pexels API: ${error}`);
             return [];
         }
     };
