@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const weatherApiKey = 'c4262e295db4429dbb8224854240204';
-    const pexelsApiKey = '7Sw3BJZ0OF9jStEXuFEZ8Bc42sdq3N3d0IbUk1y3JlzNy3GdvUGcWdyp'; // Replace with your Pexels API key
+    const pexelsApiKey = '7Sw3BJZ0OF9jStEXuFEZ8Bc42sdq3N3d0IbUk1y3JlzNy3GdvUGcWdyp'; 
     const searchButton = document.getElementById('search-btn');
     const locationInput = document.getElementById('location-input');
     const weatherInfo = document.getElementById('weather-info');
